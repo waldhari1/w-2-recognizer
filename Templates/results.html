@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>W-2 Form Results</title>
+</head>
+<body>
+    <h1>W-2 Form Results</h1>
+    {% for result in results %}
+    <h2>Recognizing W-2 #{{ result.index }}</h2>
+    <ul>
+        {% for name, field in result.fields.items() %}
+        <li>{{ name }}: {{ field.value }} (Confidence: {{ field.confidence }})</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</body>
+</html>
