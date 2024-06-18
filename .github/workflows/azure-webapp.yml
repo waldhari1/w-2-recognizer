@@ -27,4 +27,5 @@ jobs:
         with:
           app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
           slot-name: 'production'
-          package: ${{ secrets.AZURE_WEBAPP_PACKAGE
+          package: .
+          publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
